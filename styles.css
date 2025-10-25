@@ -113,8 +113,8 @@ body.page-loaded {
 /* Gallery */
 #gallery img,
 #gallery video {
-  width: 100%;          /* full column width */
-  height: 250px;        /* atau height yang sama untuk semua */
+  width:482px;
+  height:723px;/* atau height yang sama untuk semua */
   object-fit: cover;    /* crop tapi tetap proporsional */
   border-radius: 0.5rem;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
