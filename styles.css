@@ -115,7 +115,6 @@ body.page-loaded {
 #gallery video {
   width:720px;
   height:1280px;/* atau height yang sama untuk semua */
-  object-fit: cover;    /* crop tapi tetap proporsional */
   border-radius: 0.5rem;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
