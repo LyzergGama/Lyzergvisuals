@@ -92,7 +92,7 @@ body.page-loaded {
 
 /* Hero */
 #hero {
-  height: 100vh; /* full screen */
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -101,12 +101,9 @@ body.page-loaded {
   color: #fff;
   text-shadow: 0 0 15px rgba(0,0,0,0.7);
 
-  /* Background image + dark overlay */
-  background: 
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), /* dark smoke */
-    url('./Assets/Hero.jpg') center/cover fixed; /* image */
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+              url('./Assets/Hero.jpg') center/cover fixed;
 }
-
 
 #hero .btn {
   letter-spacing: 1px;
