@@ -111,13 +111,13 @@ body.page-loaded {
 
 
 /* Gallery */
-#gallery img {
+#gallery img,
+#gallery video {
+  width: 100%;          /* full column width */
+  height: 250px;        /* atau height yang sama untuk semua */
+  object-fit: cover;    /* crop tapi tetap proporsional */
+  border-radius: 0.5rem;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-#gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
 }
 
 #services .accordion-button {
