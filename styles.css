@@ -3,21 +3,29 @@ body {
   color: #fff;
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
+  opacity: 1;
+  transition: opacity 0.8s ease;
 }
 
-/* Loading Screen */
-/* Loading Screen */
+body.page-loaded {
+  opacity: 1;
+}
+
 #loading-screen {
   position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #000;
+  inset: 0;
+  z-index: 9999;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  background: #000;
   flex-direction: column;
   color: #fff;
-  transition: opacity 1s ease;
+  transition: opacity 0.8s ease;
+}
+
+.fade-out {
+  opacity: 0;
 }
 
 .loading-content {
@@ -66,31 +74,6 @@ body {
   letter-spacing: 2px;
 }
 
-body {
-  opacity: 1;
-  transition: opacity 0.8s ease;
-}
-body.page-loaded {
-  opacity: 1;
-}
-#loading-screen {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #000;
-  flex-direction: column;
-  color: #fff;
-  transition: opacity 0.8s ease;
-}
-.fade-out {
-  opacity: 0;
-}
-
-
-/* Hero */
 #hero {
   height: 100vh;
   display: flex;
@@ -100,45 +83,20 @@ body.page-loaded {
   text-align: center;
   color: #fff;
   text-shadow: 0 0 15px rgba(0,0,0,0.7);
-
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
-              url('./Assets/Hero.jpg') center/cover fixed;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('./Assets/Hero.jpg') center/cover fixed;
 }
 
 #hero .btn {
   letter-spacing: 1px;
 }
 
-
 #gallery img {
-  transition: transform 0.4s ease, box-shadow 0.4s ease; 
-} 
-
-/* ====================== Gallery Video Fix ====================== */
-#gallery .col-md-4.extra {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 430px; /* sama dengan foto portrait di grid */
-}
-#gallery .ratio {
-  width: 100%;
-  height: 100%;
-}
-#gallery .ratio video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  border-radius: .75rem;
-}
-
-.extra {
-  display: none;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 #gallery img:hover {
-  transform: scale(1.05); box-shadow: 0 0 25px rgba(255, 0, 0, 0.4); 
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.4);
 }
 
 #services .accordion-button {
@@ -147,24 +105,29 @@ body.page-loaded {
   font-size: 1.2rem;
   transition: background 0.3s ease, color 0.3s ease;
 }
+
 #services .accordion-button:not(.collapsed) {
   background-color: #d10024;
   color: #fff;
 }
+
 #services .accordion-item {
   border-radius: 10px;
   overflow: hidden;
 }
+
 #services .accordion-body {
   background: #121212;
 }
+
 #services table {
   border-radius: 8px;
 }
 
+.extra {
+  display: none;
+}
 
-
-/* About */
 .about-img {
   max-width: 90%;
   border: 2px solid #b71c1c;
@@ -177,7 +140,9 @@ body.page-loaded {
 }
 
 #contact {
-  background: #0a0a0a;
+  background: #000;
+  border-top: 2px solid rgba(255, 0, 0, 0.2);
+  padding: 60px 0;
 }
 
 #contact h2 {
@@ -189,14 +154,12 @@ body.page-loaded {
   text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
 }
 
-/* ===== Section Separation & Contrast ===== */
 section {
   padding: 80px 0;
   position: relative;
   transition: background 0.4s ease;
 }
 
-/* Gantian warna antar section biar ga monoton */
 section:nth-child(even) {
   background-color: #0e0e0e;
 }
@@ -205,7 +168,6 @@ section:nth-child(odd) {
   background-color: #121212;
 }
 
-/* Tambah subtle red glow biar ada vibe LyzergVisuals */
 section::after {
   content: "";
   position: absolute;
@@ -214,7 +176,6 @@ section::after {
   z-index: -1;
 }
 
-/* Section Titles */
 section h2 {
   text-align: center;
   font-weight: 600;
@@ -224,7 +185,6 @@ section h2 {
   letter-spacing: 1.5px;
 }
 
-/* Card look buat Services dan About */
 #services, #about {
   border-radius: 20px;
   margin: 60px auto;
@@ -234,20 +194,11 @@ section h2 {
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
 }
 
-/* Tambahan efek hover subtle */
 #services:hover, #about:hover {
   box-shadow: 0 0 60px rgba(255, 0, 0, 0.15);
   transition: box-shadow 0.4s ease;
 }
 
-/* Contact Section */
-#contact {
-  background: #000;
-  border-top: 2px solid rgba(255, 0, 0, 0.2);
-  padding: 60px 0;
-}
-
-/* Spinner animasi */
 .spinner-border {
   width: 3rem;
   height: 3rem;
@@ -258,10 +209,4 @@ section h2 {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-}
-
-/* Transisi keluar */
-.fade-out {
-  opacity: 0;
-  transition: opacity 0.8s ease;
 }
